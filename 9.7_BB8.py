@@ -19,8 +19,22 @@ import arcade
 arcade.open_window(600, 600, "BB8")
 
 # Function to draw BB8 robots
+'''
+arcade.color.ORANGE
+arcade.color.WHITE
+arcade.color.LIGHT_STEEL_BLUE'''
 def draw_BB8(x,y, radius):
-  
+    arcade.draw_circle_filled(x,y,radius,arcade.color.WHITE)
+    arcade.draw_circle_outline(x,y,radius,arcade.color.BLACK,2)
+    arcade.draw_circle_filled(x,y,(radius/3)*2,arcade.color.ORANGE)
+    arcade.draw_circle_outline(x,y,(radius/3)*2,arcade.color.BLACK,2)
+    arcade.draw_circle_filled(x,y,radius/3,arcade.color.STEEL_BLUE)
+    arcade.draw_circle_outline(x,y,radius/3,arcade.color.BLACK,2)
+    arcade.draw_arc_filled(x, y+(radius*0.8),(radius/4)*6,radius*1.5,arcade.color.WHITE,0,180)
+    arcade.draw_arc_outline(x,y+(radius*0.8),(radius/4)*6,radius*1.5,arcade.color.BLACK,0,180,2)
+    arcade.draw_line(x-((radius/4)*3),y+(radius*0.8),x+((radius/4)*3),y+(radius*0.8),arcade.color.BLACK,2)
+    arcade.draw_circle_filled(x,y+(radius*1.1),radius/4,arcade.color.STEEL_BLUE)
+    arcade.draw_circle_outline(x,y+(radius*1.1),radius/4,arcade.color.BLACK,2)
 
 # The main function where we set background color, start and finish rendering and run.
 def main():
